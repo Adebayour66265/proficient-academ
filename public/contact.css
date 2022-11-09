@@ -1,0 +1,35 @@
+.contact {
+  position: relative;
+}
+.contact-card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: var(--dod-blue);
+  width: calc(100% - var(--py));
+  padding: 30px 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.contact-card-bg {
+  position: absolute;
+  width: auto;
+  max-width: 100%;
+  top: -2px;
+  left: -2px;
+}
+.contact-card h2 {
+  position: relative;
+  font-size: 30px;
+  color: var(--white);
+  font-weight: var(--fw-8);
+  text-align: center;
+}
+.contact .btn-primary {
+  justify-self: center;
+}
+

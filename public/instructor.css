@@ -1,0 +1,89 @@
+.instructor {
+  padding: var(--py) var(--px);
+}
+.instructor .section-subtitle {
+  margin-bottom: 15px;
+  text-align: center;
+}
+.instructor .section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.instructor-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 0 15px;
+}
+.instructor-card {
+  background: hsl(228, 33%, 97%);
+  padding: 20px;
+  padding-bottom: 30px;
+  border-radius: 8px;
+  text-align: center;
+  transition: var(--default-transition);
+}
+.instructor-card:hover {
+  background: var(--white);
+  box-sizing: 0 10px 30px hsla(0, 0%, 0%, 0.1);
+}
+.instructor-img-box {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.instructor-img-box img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  transition: var(--default-transition);
+}
+.instructor-card:hover .instructor-img-box img {
+  transform: scale(1.1);
+}
+.instructor-card .social-link {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transition: var(--default-transition);
+}
+.instructor-card .social-link a {
+  background: var(--urtramarine-blue);
+  color: var(--white);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: var(--default-transition);
+}
+.instructor-card .social-link a:hover {
+  background: var(--red-orange-wheel);
+}
+.instructor-card:hover .social-link {
+  bottom: 2px;
+}
+.instructor-name {
+  color: var(--oxford-blue);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-7);
+  margin-bottom: 10px;
+  transition: var(--default-transition);
+}
+.instructor-card:hover .instructor-name {
+  color: var(--red-orange-wheel);
+}
+.instructor-title {
+  color: var(--urtramarine-blue);
+  font-family: "Roboto", sans-serif;
+  font-size: var(--fs-6);
+}
+
+

@@ -1,0 +1,128 @@
+
+.home {
+  position: relative;
+  /* margin-top: 5.5rem; */
+  padding: var(--py) var(--px) 0;
+  overflow: hidden;
+}
+.home::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: -400px;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    hsl(217, 100%, 50%, 0.3),
+    transparent 70%
+  );
+}
+.home::after {
+  content: "";
+  position: absolute;
+  top: 100px;
+  right: -400px;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    hsl(15, 100%, 55%, 0.3),
+    transparent 70%
+  );
+}
+/* .home .deco-shape{
+    position: absolute;
+} */
+.home .shape-1 {
+  top: 14%;
+  left: 8%;
+}
+.home .home-left {
+  margin-bottom: 60px;
+}
+.home-left,
+.home-right {
+  position: relative;
+  z-index: 10;
+}
+.home .section-text {
+  max-width: 500px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.home-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.home-right .img-box {
+  position: relative;
+}
+.home-right .img-box img {
+  position: absolute;
+}
+.home-right .img-box .banner-img {
+  position: relative;
+  width: auto;
+  max-width: 100%;
+  margin: auto;
+  z-index: 2;
+}
+.home-right .icon-1 {
+  top: 10px;
+  left: 10%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.home-right .icon-2,
+.home-right .icon-3 {
+  display: none;
+}
+/* ADDJUSTMENT NEEDED */
+.home-right .icon-4 {
+  top: 60px;
+  right: 20px;
+  filter: drop-shadow(0 0px 30px hsla(350, 100%, 68%, 0.5));
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.icon-1,
+.icon-2,
+.icon-3,
+.icon-4 {
+  filter: drop-shadow(0 10px 20px hsla(0, 0%, 0%, 0.2));
+  z-index: 5;
+}
+
+.sect-congrat {
+  display: flex;
+  justify-content: space-between;
+  justify-self: center;
+  position: absolute;
+  top: 18rem;
+  left: 5rem;
+  background-color: dodgerblue;
+  padding: 1rem 2rem;
+  /* width: 17%; */
+  max-width: 14rem;
+  height: 10vh;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  z-index: 8;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--fs-6);
+}
+.congrat {
+  padding: 1rem 2rem;
+  text-align: center;
+}

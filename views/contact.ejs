@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('includes/head') %>
+  <link rel="stylesheet" href="/new-post.css" />
+
+  <body>
+    <%- include('includes/sec-header') %>
+    <main>
+      <div class="grid-item">
+        <h4 class="item-hearding">Contact Us</h4>
+        <div class="wrapper">
+          <form action="https://formcarry.com/s/NcH2mDBVkKc" method="POST">
+            <input type="text" placeholder="Email Address" />
+            <input type="tel" placeholder="Phone" />
+            <textarea
+              name=""
+              id=""
+              cols="17"
+              rows="10"
+              placeholder="Message"
+            ></textarea>
+
+            <button class="btn btn-primary send-btn">
+              <p class="btn-text">Contact Us</p>
+              <span class="square"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <%- include('includes/footer') %>
+  </body>
+</html>

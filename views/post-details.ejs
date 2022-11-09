@@ -1,0 +1,65 @@
+    <%- include('includes/head') %>
+    <link rel="stylesheet" href="/post-item.css">   
+    <script src="/script/comments.js" defer></script>
+  
+    <title>Post Details</title>
+  </head>
+  <body>
+    <%- include('includes/sec-header') %>
+
+    <main>
+      <div class="post-section">
+
+        <time datetime="<%= post.date %>"><%= post.humanReadableDate %></time>
+
+        <address> <a href="mailto:<%= post.author.email %>"></a> <%= post.author.name %></address>
+       
+
+        <div class="blog-banner-box">
+          <h3><%= post.title %></h3>
+          <img src="/<%= post.image %>" alt="<%= post.title  %> " />
+        </div>
+        <section>
+          <div class="post-title-details">
+            <h1><%= post.summary %></h1>
+            </div>
+          <div class="post-details">
+               
+          </div>
+
+        </section>
+      
+
+        <section>
+          <div class="post-body">
+            <p><%= post.body %></p>
+          </div>
+        </section>
+
+        <div class="post-comment">
+          <div class="first-comment">
+            <!-- <a href="/posts/<%= post._id %>/comments ">
+            View Comment
+            </a> -->
+      </div>
+        <div class="second-comment">
+          <button class="btn-alt" id="load-comment-btn" data-postid="<%= post._id %>">Load Comment</button>
+
+        </div>
+          </div>
+          </div>
+      
+          <section id="comments">
+           
+            <p class="info">This post might have comments. You can load them</p>
+      
+          </section>
+          
+      
+      <%- include('includes/../comments') %>
+
+    </main>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

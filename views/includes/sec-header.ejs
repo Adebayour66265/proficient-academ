@@ -1,0 +1,64 @@
+<div class="container">
+  <nav class="navbar">
+    <div class="nav-brand">
+      <a href="/posts">
+        <img src="/images/logo-1.png" alt="Education logo" />
+      </a>
+    </div>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="/" id="home">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/posts" id="home">All Posts</a>
+      </li>
+      <% if(locals.isAuth) {%>
+      <li class="nav-item">
+        <a href="/newpost" id="home">Create Post</a>
+      </li>
+      <% } %> 
+      <% if(!locals.isAuth) {%>
+      <li class="nav-item">
+        <a href="/login" id="home">Login</a>
+      </li>
+      <% } %> 
+      <% if(!locals.isAuth) {%>
+      <li class="nav-item">
+        <a href="/signup" id="home">Register</a>
+      </li>
+      <% } %> 
+
+      <% if(locals.isAdmin) {%>
+      <li class="nav-item">
+        <a href="/admin" id="home">Admin</a>
+      </li>
+      <% } %>
+ 
+      <% if(locals.isAdmin) {%>
+      <li class="nav-item">
+        <a href="/profile" id="home">Profile</a>
+      </li>
+      <% } %> 
+
+      <% if(locals.isAuth) {%>
+      <li class="nav-item">
+        <form action="/logout" method="POST">
+          <a href="" id="home">
+            <button id="home">Log Out</button>
+          </a>
+        </form>
+      </li>
+      <% } %>
+    </ul>
+
+
+
+    <button class="nav-toggle-btn">
+      <span class="one"></span>
+      <span class="two"></span>
+      <span class="three"></span>
+    </button>
+  </nav>
+</div>

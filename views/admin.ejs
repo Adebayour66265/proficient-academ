@@ -1,0 +1,273 @@
+<%- include('includes/head') %>
+<link rel="stylesheet" href="/dashbord.css">
+<script src="/script/file-preview.js" defer></script>
+<script src="/script/devider.js" defer></script>
+<script src="/script/dashbord.js" defer></script>
+<link rel="stylesheet" href="/devider.css">
+
+<link rel="stylesheet" href="/post-item.css">
+
+<title>Admin</title>
+</head>
+<body>
+<%- include('includes/sec-header') %>
+<main>
+<h1></h1>
+
+
+
+<p class="section-subtitle">Administrative Page</p>
+    
+<h2 class="section-title">Manage Post</h2>
+
+
+<div class="sidebar">
+  <div class="logo-details">
+    <span class="logo_name">
+      <i class="uil uil-user"></i>
+      Admin
+    </span>
+  </div>
+  <ul class="link">
+    <li>
+      <a href="#">
+        <i class="uil uil-apps"></i>
+        <span class="link_name">Dashbord</span>
+      </a>
+    </li>
+    <li>
+      <div class="icon-link">
+        <a href="">
+          <i class="uil uil-basketball-hoop"></i>
+          <span class="link_name">Category</span>
+        </a>
+        <i class="uil uil-angle-down arrow"></i>
+      </div>
+      <ul class="sub-menu">
+        <li><a href=""  class="link_name">Report Bug</a></li>
+        <li><a href="">Others</a></li>
+        <li><a href="">Settings</a></li>
+      </ul>
+
+      <a href="#">
+    <i class="uil uil-mailbox"></i>
+        <span class="link_name">Manage Posts</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="uil uil-users-alt"></i>
+        <span class="link_name">Manage Users</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+    <i class="uil uil-comments"></i>
+        <span class="link_name">Manage Comments</span>
+      </a>
+    </li>
+    <ul class="sub-menu blank">
+      <li>
+        <a href="#">
+      <i class="uil uil-comments"></i>
+          <span class="link_name">History</span>
+        </a>
+      </li>
+   
+    <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <img src="/images/20220510_113438.jpg" alt="">
+      </div>
+      
+      <div class="name-job">
+        <div class="profile-name">
+          Mustapha Nurudeen
+        </div>
+        <div class="job">
+          Web Developer
+        </div>
+      </div>
+    <i class="uil uil-signout"></i>
+    </div>
+  </li>
+  </ul>
+</ul>
+</div>
+<section class="home-section-menu">
+  <div class="home-content">
+    <i class="uil uil-ellipsis-h admin"></i>
+    <span class="text"> <i class="uil uil-apps admin"></i></span>
+  </div>
+</section>
+
+
+<section class="group-user">
+  <div class="first-user">
+    <p>Total User </p>
+    <i class="uil uil-user-arrows  qualificaion_icon icon-large"></i>
+
+    <div class="total-user">
+      <h1><%= user.length  %></h1>
+    </div>
+  </div>
+  <div class="first-user coral">
+    <p>Total Post </p>
+    <i class="uil uil-postcard  qualificaion_icon icon-large"></i>
+
+    <div class="total-user">
+      <h1><%= posts.length   %> </h1>
+    </div>
+  </div>
+  <div class="first-user pink">
+    <p>Total Comments</p>
+    <i class="uil uil-comments qualificaion_icon icon-large"></i>
+    <div class="total-user">
+      <h1><%= comments.length %> </h1>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="qualification section">
+  <div class="qualification_container container">
+      <div class="qualification_tabs">
+          <div class="qualification_button button--flex qualification_active" data-target='#education'>
+           <i class="uil uil-user-arrows  qualificaion_icon"></i>
+          Manage Posts 
+          </div>
+          <div class="qualification_button button--flex" data-target="#work">
+           <i class="uil uil-postcard  qualificaion_icon"></i>
+          Manage Users
+          </div>
+      </div>
+      <div class="qualification_sections">
+<!----============================ QUALIFICATION CONTENT 1 =================================--->
+       <div class="qualification_content qualification_active" data-content id="education">
+<!----================================= QUALIFICATION  1 =================================--->
+
+        
+<div class="qualification_data">
+  <div></div>
+  
+
+  
+  <div>
+    <span class="qualification_rounder"></span>
+    <span class="qualification_line"></span>
+      </div>
+  </div>
+  
+
+
+  
+
+
+
+<% if(!posts || posts.length === 0) { %>
+  <p>could not find the posts. you need to first create some</p> 
+
+  <% } else { %> 
+    <ul>
+      <% for (const post of posts) { %>
+
+<section class="blog" onclick="window.location.href='/posts/<%= post._id %>'">
+<div class="blog-card">
+<div class="blog-banner-box">
+<img src="<%= post.image %>" alt="<%= post.title  %> " />
+</div>
+<div class="blog-content">
+<h3 class="blog-tittle">
+  <a href=""><%= post.title %></a>
+</h3>
+
+<div class="wrapper">
+  <div class="blog-publish-date">
+    <time datetime="<%= post.date %>" class="time"><%= post.humanReadableDate %></time>
+  </div>
+  <div class="blog-comment reselect">
+    <a href="/posts/<%= post._id %>" class="btn"><i class="uil uil-arrow-circle-right view-post"></i></a>
+    <a href="/posts/<%= post._id %>/edit" class="btn"><i class="uil uil-pen view-post"></i></a>
+    <form action="/posts/<%= post._id %>/delete" method="POST">
+      <button class="btn"><i class="uil uil-trash-alt view-post"></i></button>
+      </form>
+
+  </div>
+</div>
+</div>
+</div>
+</section>
+<% } %> 
+</ul>
+<% } %> 
+
+
+
+   <span class="qualification_rounder"></span>
+    <span class="qualification_line"></span>
+      </div>
+  </div>
+  </div>
+
+
+   
+  <!----============================ QUALIFICATION CONTENT 2 =================================--->
+  <div class="qualification_content"  data-content id="work">
+  
+   <div class="qualification_data">
+       <div></div>
+
+   <div>
+       <span class="qualification_rounder"></span>
+       <span class="qualification_line"></span>
+      </div>
+
+      
+   </div>
+
+   
+<div class="find-all">
+  <div class="users">
+    <% if(!user || user.isAd || user.length === 0) { %>
+      <p>could not find the Users. you need to first create some</p> 
+    
+      <% } else { %> 
+        <ul>
+          <% for (const users of user) { %>
+            
+            <div class="user-details">
+              <h1><%= users.email  %> 
+                 </h1>
+                 <div class="blog-comment reselect">
+                 <a href="" class="btn"><i class="uil uil-arrow-circle-right view-post"></i></a>
+                 <a href="" class="btn"><i class="uil uil-pen view-post"></i></a>
+                 <form action="" method="POST">
+                   <button class="btn"><i class="uil uil-trash-alt view-post"></i></button>
+                   </form>
+            </div>
+          </div>
+            <% } %> 
+          </ul>
+          <% } %> 
+  </div>
+</div>
+   
+  </div>
+</div>   
+</div>
+  </div>
+</section>
+
+
+     
+      
+
+
+</main>
+
+<%- include('includes/footer') %>
+</body>
+</html>
+

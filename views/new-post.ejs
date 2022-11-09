@@ -1,0 +1,52 @@
+
+    <%- include('includes/head') %>
+    <link rel="stylesheet" href="/new-post.css">
+    <script src="/script/file-preview.js" defer></script>
+    <title> New Post</title>
+  </head>
+  <body>
+
+    <%- include('includes/sec-header') %>
+
+    <main>
+        <div class="grid-item new-p">
+            <h1 class="item-heardin">New Post</h1>
+      
+            <div class="wrapper">
+              <form action="/posts" method="POST" enctype="multipart/form-data">
+                <input type="text" placeholder="Title"  name="title" required/>
+                <input type="text" placeholder="Summary" name="summary" required/>
+                <input type="file" name="image" id="image" accept="image/*"/>
+                <img src="" id="image-preview" alt="Choose your image">
+                <textarea
+                  name="content"
+                  id=""
+                  cols="17"
+                  rows="10"
+                  placeholder="Post content"
+                ></textarea>
+
+               <div class="select">
+                <label for="author"> Select Author </label>
+        
+                <select name="author" id="author" class="selecting">
+                  <% for (const author of authors) { %> 
+                    <option value="<%= author._id %>"><%= author.name %></option>
+                    <% } %> 
+                </select>
+               </div>
+
+                <button class="btn btn-primary send-btn">
+                  <p class="btn-text">Add Post</p>
+                  <span class="square"></span>
+                </button>
+              </form>
+            </div>
+          </div>
+    
+      
+    </main>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

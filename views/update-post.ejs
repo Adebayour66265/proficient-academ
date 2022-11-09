@@ -1,0 +1,33 @@
+
+    <%- include('includes/head') %>
+    <link rel="stylesheet" href="/new-post.css">
+    <title>Update Post</title>
+  </head>
+  <body>
+    <%- include('includes/sec-header') %>
+
+    <main>
+        <div class="grid-item new-p">
+            <h1 class="item-heardin">Update Post</h1>
+      
+            <div class="wrapper">
+              <form action="/posts/<%= post._id %>/edit " method="POST">
+                <input type="text" placeholder="Title"  name="title" value="<%= post.title %> "/>
+                <input type="text" placeholder="Summary" name="summary" value="<%= post.summary %> "/>
+                <textarea  name="content" id=""  cols="17"  rows="10"  placeholder="Post content" ><%= post.body %></textarea>
+
+
+                <button class="btn btn-primary send-btn">
+                  <p class="btn-text">Update Post</p>
+                  <span class="square"></span>
+                </button>
+              </form>
+            </div>
+          </div>
+    
+      
+    </main>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

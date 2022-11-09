@@ -1,0 +1,24 @@
+
+<% if(!comments || comments.length === 0) { %>
+    <p>could not find the comments. you need to first create some</p> 
+    <% } else { %> 
+      <ul>
+        <% for (const comment of comments) { %>      
+  <div class="comments">
+    <ul>
+      <li> <div class="insert-comment">
+        <h3><%= comment.title %> </h3>
+        <p><%= comment.text %> </p>
+        <div class="blog-comment reselect">
+          <a href="/posts/<%= post._id %>/comments" class="btn"><i class="uil uil-pen view-post"></i></a>
+          <form action="/posts/<%= post._id %>/comments" method="DELETE">
+            <button class="btn"><i class="uil uil-trash-alt view-post"></i></button>
+            </form>
+  
+        </div>
+      </div>
+     </li>
+  <% } %> 
+  </ul>
+  </div>
+  <% } %> 

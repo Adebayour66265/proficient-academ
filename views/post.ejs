@@ -1,0 +1,31 @@
+
+    <%- include('includes/head') %>
+    <link rel="stylesheet" href="/post-item.css">
+    <title>Post</title>
+  </head>
+  <body>
+    <%- include('includes/sec-header') %>
+
+    <main>
+        
+        <p class="section-subtitle">Our Blog</p>
+    
+        <h2 class="section-title">Latest Blog & News</h2>
+        
+        <% if (!posts || posts.length === 0) { %>
+        <p>No Post found - Maybe Start creating Some</p>
+        <a href="/newpost">Create a new Post</a>
+        <% } else { %> 
+          <ol>
+            <% for (const post of posts) { %> 
+            <li>
+        <%- include('includes/post-item', {post: post}) %>
+            </li>
+            <% } %> 
+          </ol>
+      <% } %> 
+    </main>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

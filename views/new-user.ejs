@@ -1,0 +1,55 @@
+<%- include('includes/head') %>
+<link rel="stylesheet" href="/new-post.css">
+
+<link rel="stylesheet" href="/post-item.css">
+
+<title>Register</title>
+</head>
+<body>
+<%- include('includes/sec-header') %>
+<main>
+
+<h1 class="section-title">Signup</h1>
+
+<link rel="stylesheet" href="/new-post.css" />
+
+
+<%  if (inputData.hasError){ %>
+  <p id="input-error"><%= inputData.message %> </p>
+  <% } %> 
+
+<div class="grid-item new-p">
+  <div class="wrapper">
+    <form action="/signup" method="POST">
+      <!-- <label for="email">Email</label> -->
+      <input type="email" placeholder="Enter Email" id="email" name="email"  value="<%= inputData.email %>"/>
+      <input
+        type="email"
+        placeholder="Confirm-Email"
+        id="confirm-email"
+        name="confirm-email"
+        value="<%= inputData.confirmEmail %>"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        id="password"
+        name="password"
+        value="<%= inputData.password %>"
+      />
+
+      <button class="btn btn-primary send-btn">
+        <p class="btn-text">Create An Account</p>
+        <span class="square"></span>
+      </button>
+    </form>
+    <h3>Login <a href="/login">Instead </a></h3>
+  </div>
+</div>
+
+ 
+</main>
+
+<%- include('includes/footer') %>
+</body>
+</html>

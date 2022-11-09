@@ -1,0 +1,23 @@
+<section class="blog" onclick="window.location.href='/posts/<%= post._id %>'">
+  <div class="blog-card">
+    <div class="blog-banner-box">
+      <img src="<%= post.image %>" alt="<%= post.title  %> " />
+    </div>
+    <div class="blog-content">
+      <h3 class="blog-tittle">
+        <a href=""><%= post.title %></a>
+      </h3>
+
+      <div class="wrapper">
+        <div class="blog-publish-date">
+          <time datetime="<%= post.date %>"><%= post.humanReadableDate %></time>
+        </div>
+        <div class="blog-comment">
+          <a href="/posts/<%= post._id %>" class="btn"
+            ><i class="uil uil-arrow-circle-right view-post"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/new-post.css" />
+
+<div class="grid-item new-p">
+  <div class="wrapper">
+    <form id="comment-form" data-postid="<%= post._id %>">
+      <input type="text" placeholder="Comment Title" id="title" name="title" />
+      <textarea
+        name="text"
+        id="text"
+        cols="17"
+        rows="10"
+        placeholder="Your Comment"
+      ></textarea>
+
+      <button class="btn btn-primary send-btn">
+        <p class="btn-text">Comment</p>
+        <span class="square"></span>
+      </button>
+    </form>
+  </div>
+</div>
