@@ -2,7 +2,7 @@ const mongodb = require('mongodb');
 
 const MongoClient = mongodb.MongoClient;
 
-let mongodbURL = 'mongodb://localhost:27017';
+let mongodbURL = 'mongodb+srv://Adebayour66265:Adebayour66265@cluster0.8114dlp.mongodb.net/?retryWrites=true&w=majority';
 
 if (process.env.MONGODB_URL) {
     mongodbURL = process.env.MONGODB_URL;
