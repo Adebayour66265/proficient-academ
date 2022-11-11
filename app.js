@@ -18,6 +18,9 @@ const authRoutes = require('./routes/auth.routh');
 
 const mongoSessionDbStore = sessionConfig.ceateSessionStore(session);
 // EXPRESS APP FUNCTION
+
+
+
 const app = express();
 
 
@@ -51,7 +54,7 @@ app.use(function (error, req, res, next) {
 
 
 db.connectToDatabase().then(function () {
-    const PORT = process.env.PORT || 3000
+    let PORT = process.env.PORT || 3000
     app.listen(PORT, () => {
         console.log(`Connected sucessfully with Server ${PORT}`);
     })

@@ -2,15 +2,15 @@ const mongodb = require('mongodb');
 
 const MongoClient = mongodb.MongoClient;
 
-let mongodbURL = 'mongodb+srv://Adebayour66265:Adebayour66265@cluster0.8114dlp.mongodb.net/?retryWrites=true&w=majority';
+let mongodbUrl = 'mongodb://localhost:27017';
 
 if (process.env.MONGODB_URL) {
-    mongodbURL = process.env.MONGODB_URL;
+    mongodbUrl = process.env.MONGODB_URL;
 }
 let database;
 
 async function connectToDatabase() {
-    const client = await MongoClient.connect(mongodbURL);
+    const client = await MongoClient.connect(mongodbUrl);
     database = client.db('blog');
 }
 
