@@ -4,13 +4,13 @@ function ceateSessionStore(session) {
     const MongoDBStore = mongodbStore(session);
 
 
-    let mongodbUrl;
+    let MONGODB_URL;
 
     if (process.env.MONGODB_URL) {
-        mongodbUrl = process.env.MONGODB_URL;
+        url = process.env.MONGODB_URL;
     }
     const sessionStore = new MongoDBStore({
-          mongodbUrl: 'mongodb://localhost:27017',
+          url: 'mongodb://localhost:27017',
         // url: '',
         databaseName: 'blog',
         collection: 'sessions'
