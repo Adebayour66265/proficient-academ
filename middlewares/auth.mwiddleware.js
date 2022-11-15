@@ -15,7 +15,7 @@ async function auth(req, res, next) {
     res.locals.isAuth = isAuth;
     res.locals.isAdmin = isAdmin;
 
-    next();
+    next();  
 }
 
-module.exports = auth
+module.exports = auth;

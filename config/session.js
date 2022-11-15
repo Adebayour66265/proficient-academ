@@ -3,8 +3,15 @@ const mongodbStore = require('connect-mongodb-session');
 function ceateSessionStore(session) {
     const MongoDBStore = mongodbStore(session);
 
+
+    let mongodbUrl;
+
+    if (process.env.MONGODB_URL) {
+        mongodbUrl = process.env.MONGODB_URL;
+    }
     const sessionStore = new MongoDBStore({
-        uri: 'mongodb://localhost:27017',
+          mongodbUrl: 'mongodb://localhost:27017',
+        // url: '',
         databaseName: 'blog',
         collection: 'sessions'
     });
@@ -21,7 +28,7 @@ function createSessionConfig(sessionStore) {
             maxAge: 30 * 24 * 60 * 60 * 1000
         }
     };
-    
+
 }
 
 

@@ -61,5 +61,5 @@ db.connectToDatabase().then(function () {
     app.listen(port, () => {
         console.log(`Connected sucessfully with Server ${port}`);
     })
-})
+});
 
