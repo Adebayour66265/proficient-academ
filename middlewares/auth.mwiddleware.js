@@ -1,5 +1,6 @@
 const mongodb = require('mongodb');
 const db = require('../data/database');
+require('dotenv').config();
 
 async function auth(req, res, next) {
     const user = req.session.user;
@@ -10,10 +11,11 @@ async function auth(req, res, next) {
     }
 
     const userDoc = await db.getDb().collection('users').findOne({ _id: user.id });
-    const isAdmin = userDoc.isAdmin;
+
+    // const isAdmin = userDoc.isAdmin;
 
     res.locals.isAuth = isAuth;
-    res.locals.isAdmin = isAdmin;
+    // res.locals.isAdmin = isAdmin;
 
     next();  
 }

@@ -1,4 +1,5 @@
 const mongodbStore = require('connect-mongodb-session');
+require('dotenv').config();
 
 function ceateSessionStore(session) {
     const MongoDBStore = mongodbStore(session);
