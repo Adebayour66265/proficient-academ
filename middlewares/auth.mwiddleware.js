@@ -11,20 +11,13 @@ async function auth(req, res, next) {
     }
 
     const userDoc = await db.getDb().collection('users').findOne({ _id: user.id });
-<<<<<<< HEAD
 
-    // const isAdmin = userDoc.isAdmin;
-
-    res.locals.isAuth = isAuth;
-    // res.locals.isAdmin = isAdmin;
-=======
-    //const isAdmin = userDoc.isAdmin;
+    const isAdmin = userDoc.isAdmin;
 
     res.locals.isAuth = isAuth;
-   // res.locals.isAdmin = isAdmin;
->>>>>>> 6d24c6a5b7b452ebf8d5408720319e67933982df
+    res.locals.isAdmin = isAdmin;
 
-    next();  
+    next();
 }
 
 module.exports = auth;
